@@ -1,0 +1,250 @@
+pavana@ubuntu:~$ cd spark-1.3.1-bin-hadoop2.4.tgz
+bash: cd: spark-1.3.1-bin-hadoop2.4.tgz: Not a directory
+pavana@ubuntu:~$ cd spark-1.3.1-bin-hadoop2.4.tgz
+bash: cd: spark-1.3.1-bin-hadoop2.4.tgz: Not a directory
+pavana@ubuntu:~$ 
+pavana@ubuntu:~$ clear
+
+pavana@ubuntu:~$ cd spark-1.3.1-bin-hadoop2.4
+pavana@ubuntu:~/spark-1.3.1-bin-hadoop2.4$ cd ./bin/spark-shell
+bash: cd: ./bin/spark-shell: Not a directory
+pavana@ubuntu:~/spark-1.3.1-bin-hadoop2.4$  ./bin/spark-shell
+log4j:WARN No appenders could be found for logger (org.apache.hadoop.metrics2.lib.MutableMetricsFactory).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+15/09/25 19:14:44 INFO SecurityManager: Changing view acls to: pavana
+15/09/25 19:14:44 INFO SecurityManager: Changing modify acls to: pavana
+15/09/25 19:14:44 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(pavana); users with modify permissions: Set(pavana)
+15/09/25 19:14:45 INFO HttpServer: Starting HTTP Server
+15/09/25 19:14:45 INFO Server: jetty-8.y.z-SNAPSHOT
+15/09/25 19:14:45 INFO AbstractConnector: Started SocketConnector@0.0.0.0:46417
+15/09/25 19:14:45 INFO Utils: Successfully started service 'HTTP class server' on port 46417.
+Welcome to
+      ____              __
+     / __/__  ___ _____/ /__
+    _\ \/ _ \/ _ `/ __/  '_/
+   /___/ .__/\_,_/_/ /_/\_\   version 1.3.1
+      /_/
+
+Using Scala version 2.10.4 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_05)
+Type in expressions to have them evaluated.
+Type :help for more information.
+15/09/25 19:14:50 WARN Utils: Your hostname, ubuntu resolves to a loopback address: 127.0.1.1, but we couldn't find any external IP address!
+15/09/25 19:14:50 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+15/09/25 19:14:50 INFO SparkContext: Running Spark version 1.3.1
+15/09/25 19:14:50 INFO SecurityManager: Changing view acls to: pavana
+15/09/25 19:14:50 INFO SecurityManager: Changing modify acls to: pavana
+15/09/25 19:14:50 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(pavana); users with modify permissions: Set(pavana)
+15/09/25 19:14:51 INFO Slf4jLogger: Slf4jLogger started
+15/09/25 19:14:51 INFO Remoting: Starting remoting
+15/09/25 19:14:51 INFO Utils: Successfully started service 'sparkDriver' on port 46244.
+15/09/25 19:14:51 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkDriver@ubuntu:46244]
+15/09/25 19:14:51 INFO SparkEnv: Registering MapOutputTracker
+15/09/25 19:14:51 INFO SparkEnv: Registering BlockManagerMaster
+15/09/25 19:14:51 INFO DiskBlockManager: Created local directory at /tmp/spark-4ed7da56-6165-46c4-af58-cb6b17d605e7/blockmgr-cc216b48-d59c-4d17-bd2e-095cd5692d3d
+15/09/25 19:14:51 INFO MemoryStore: MemoryStore started with capacity 265.1 MB
+15/09/25 19:14:51 INFO HttpFileServer: HTTP File server directory is /tmp/spark-ba8a14e9-bc7f-4940-9634-90f0262cbf0e/httpd-22dc55a5-4452-4c0a-b548-f1dc2c885407
+15/09/25 19:14:51 INFO HttpServer: Starting HTTP Server
+15/09/25 19:14:51 INFO Server: jetty-8.y.z-SNAPSHOT
+15/09/25 19:14:51 INFO AbstractConnector: Started SocketConnector@0.0.0.0:45205
+15/09/25 19:14:51 INFO Utils: Successfully started service 'HTTP file server' on port 45205.
+15/09/25 19:14:51 INFO SparkEnv: Registering OutputCommitCoordinator
+15/09/25 19:14:56 INFO Server: jetty-8.y.z-SNAPSHOT
+15/09/25 19:14:56 INFO AbstractConnector: Started SelectChannelConnector@0.0.0.0:4040
+15/09/25 19:14:56 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+15/09/25 19:14:56 INFO SparkUI: Started SparkUI at http://ubuntu:4040
+15/09/25 19:14:57 INFO Executor: Starting executor ID <driver> on host localhost
+15/09/25 19:14:57 INFO Executor: Using REPL class URI: http://127.0.1.1:46417
+15/09/25 19:14:57 INFO AkkaUtils: Connecting to HeartbeatReceiver: akka.tcp://sparkDriver@ubuntu:46244/user/HeartbeatReceiver
+15/09/25 19:14:57 INFO NettyBlockTransferService: Server created on 47925
+15/09/25 19:14:57 INFO BlockManagerMaster: Trying to register BlockManager
+15/09/25 19:14:57 INFO BlockManagerMasterActor: Registering block manager localhost:47925 with 265.1 MB RAM, BlockManagerId(<driver>, localhost, 47925)
+15/09/25 19:14:57 INFO BlockManagerMaster: Registered BlockManager
+15/09/25 19:14:57 INFO SparkILoop: Created spark context..
+Spark context available as sc.
+15/09/25 19:14:58 INFO SparkILoop: Created sql context (with Hive support)..
+SQL context available as sqlContext.
+
+scala> val inputfile = sc.textFile("Input.txt")
+15/09/25 19:16:41 INFO MemoryStore: ensureFreeSpace(159118) called with curMem=0, maxMem=278019440
+15/09/25 19:16:41 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 155.4 KB, free 265.0 MB)
+15/09/25 19:16:41 INFO MemoryStore: ensureFreeSpace(22692) called with curMem=159118, maxMem=278019440
+15/09/25 19:16:41 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 22.2 KB, free 265.0 MB)
+15/09/25 19:16:41 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on localhost:47925 (size: 22.2 KB, free: 265.1 MB)
+15/09/25 19:16:41 INFO BlockManagerMaster: Updated info of block broadcast_0_piece0
+15/09/25 19:16:41 INFO SparkContext: Created broadcast 0 from textFile at <console>:21
+inputfile: org.apache.spark.rdd.RDD[String] = Input.txt MapPartitionsRDD[1] at textFile at <console>:21
+
+scala> val counts = inputfile.flatMap(line => line.split(" ")).map(word => (word, 1)).reduceByKey(_+_);
+15/09/25 19:16:52 INFO FileInputFormat: Total input paths to process : 1
+counts: org.apache.spark.rdd.RDD[(String, Int)] = ShuffledRDD[4] at reduceByKey at <console>:23
+
+scala> counts.saveAsTextFile("Output_WordCount")
+15/09/25 19:17:35 INFO deprecation: mapred.tip.id is deprecated. Instead, use mapreduce.task.id
+15/09/25 19:17:35 INFO deprecation: mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id
+15/09/25 19:17:35 INFO deprecation: mapred.task.is.map is deprecated. Instead, use mapreduce.task.ismap
+15/09/25 19:17:35 INFO deprecation: mapred.task.partition is deprecated. Instead, use mapreduce.task.partition
+15/09/25 19:17:35 INFO deprecation: mapred.job.id is deprecated. Instead, use mapreduce.job.id
+15/09/25 19:17:35 INFO SparkContext: Starting job: saveAsTextFile at <console>:26
+15/09/25 19:17:35 INFO DAGScheduler: Registering RDD 3 (map at <console>:23)
+15/09/25 19:17:35 INFO DAGScheduler: Got job 0 (saveAsTextFile at <console>:26) with 7 output partitions (allowLocal=false)
+15/09/25 19:17:35 INFO DAGScheduler: Final stage: Stage 1(saveAsTextFile at <console>:26)
+15/09/25 19:17:35 INFO DAGScheduler: Parents of final stage: List(Stage 0)
+15/09/25 19:17:35 INFO DAGScheduler: Missing parents: List(Stage 0)
+15/09/25 19:17:35 INFO DAGScheduler: Submitting Stage 0 (MapPartitionsRDD[3] at map at <console>:23), which has no missing parents
+15/09/25 19:17:35 INFO MemoryStore: ensureFreeSpace(3736) called with curMem=181810, maxMem=278019440
+15/09/25 19:17:35 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 3.6 KB, free 265.0 MB)
+15/09/25 19:17:35 INFO MemoryStore: ensureFreeSpace(2632) called with curMem=185546, maxMem=278019440
+15/09/25 19:17:35 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 2.6 KB, free 265.0 MB)
+15/09/25 19:17:35 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on localhost:47925 (size: 2.6 KB, free: 265.1 MB)
+15/09/25 19:17:35 INFO BlockManagerMaster: Updated info of block broadcast_1_piece0
+15/09/25 19:17:35 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:839
+15/09/25 19:17:35 INFO DAGScheduler: Submitting 7 missing tasks from Stage 0 (MapPartitionsRDD[3] at map at <console>:23)
+15/09/25 19:17:35 INFO TaskSchedulerImpl: Adding task set 0.0 with 7 tasks
+15/09/25 19:17:35 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, localhost, PROCESS_LOCAL, 1306 bytes)
+15/09/25 19:17:35 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1, localhost, PROCESS_LOCAL, 1306 bytes)
+15/09/25 19:17:35 INFO TaskSetManager: Starting task 2.0 in stage 0.0 (TID 2, localhost, PROCESS_LOCAL, 1306 bytes)
+15/09/25 19:17:35 INFO TaskSetManager: Starting task 3.0 in stage 0.0 (TID 3, localhost, PROCESS_LOCAL, 1306 bytes)
+15/09/25 19:17:35 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
+15/09/25 19:17:35 INFO Executor: Running task 3.0 in stage 0.0 (TID 3)
+15/09/25 19:17:35 INFO Executor: Running task 2.0 in stage 0.0 (TID 2)
+15/09/25 19:17:35 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+15/09/25 19:17:35 INFO HadoopRDD: Input split: file:/home/pavana/spark-1.3.1-bin-hadoop2.4/Input.txt:33554432+33554432
+15/09/25 19:17:35 INFO HadoopRDD: Input split: file:/home/pavana/spark-1.3.1-bin-hadoop2.4/Input.txt:0+33554432
+15/09/25 19:17:35 INFO HadoopRDD: Input split: file:/home/pavana/spark-1.3.1-bin-hadoop2.4/Input.txt:100663296+33554432
+15/09/25 19:17:35 INFO HadoopRDD: Input split: file:/home/pavana/spark-1.3.1-bin-hadoop2.4/Input.txt:67108864+33554432
+15/09/25 19:17:37 INFO ExternalSorter: Thread 78 spilling in-memory map of 24.7 MB to disk (1 time so far)
+15/09/25 19:17:37 INFO ExternalSorter: Thread 77 spilling in-memory map of 24.6 MB to disk (1 time so far)
+15/09/25 19:17:38 INFO ExternalSorter: Thread 79 spilling in-memory map of 36.7 MB to disk (1 time so far)
+15/09/25 19:17:38 INFO ExternalSorter: Thread 76 spilling in-memory map of 26.5 MB to disk (1 time so far)
+15/09/25 19:17:40 INFO ExternalSorter: Thread 77 spilling in-memory map of 24.7 MB to disk (2 times so far)
+15/09/25 19:17:40 INFO ExternalSorter: Thread 78 spilling in-memory map of 39.0 MB to disk (2 times so far)
+15/09/25 19:17:41 INFO ExternalSorter: Thread 79 spilling in-memory map of 39.4 MB to disk (2 times so far)
+15/09/25 19:17:41 INFO ExternalSorter: Thread 76 spilling in-memory map of 24.7 MB to disk (2 times so far)
+15/09/25 19:17:43 INFO ExternalSorter: Thread 77 spilling in-memory map of 24.7 MB to disk (3 times so far)
+15/09/25 19:17:47 INFO Executor: Finished task 2.0 in stage 0.0 (TID 2). 2009 bytes result sent to driver
+15/09/25 19:17:47 INFO TaskSetManager: Starting task 4.0 in stage 0.0 (TID 4, localhost, PROCESS_LOCAL, 1306 bytes)
+15/09/25 19:17:47 INFO Executor: Running task 4.0 in stage 0.0 (TID 4)
+15/09/25 19:17:47 INFO HadoopRDD: Input split: file:/home/pavana/spark-1.3.1-bin-hadoop2.4/Input.txt:134217728+33554432
+15/09/25 19:17:47 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 2009 bytes result sent to driver
+15/09/25 19:17:47 INFO TaskSetManager: Starting task 5.0 in stage 0.0 (TID 5, localhost, PROCESS_LOCAL, 1306 bytes)
+15/09/25 19:17:47 INFO Executor: Running task 5.0 in stage 0.0 (TID 5)
+15/09/25 19:17:47 INFO HadoopRDD: Input split: file:/home/pavana/spark-1.3.1-bin-hadoop2.4/Input.txt:167772160+33554432
+15/09/25 19:17:47 INFO TaskSetManager: Finished task 2.0 in stage 0.0 (TID 2) in 11141 ms on localhost (1/7)
+15/09/25 19:17:47 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 11159 ms on localhost (2/7)
+15/09/25 19:17:47 INFO Executor: Finished task 3.0 in stage 0.0 (TID 3). 2009 bytes result sent to driver
+15/09/25 19:17:47 INFO TaskSetManager: Starting task 6.0 in stage 0.0 (TID 6, localhost, PROCESS_LOCAL, 1306 bytes)
+15/09/25 19:17:47 INFO Executor: Running task 6.0 in stage 0.0 (TID 6)
+15/09/25 19:17:47 INFO TaskSetManager: Finished task 3.0 in stage 0.0 (TID 3) in 11345 ms on localhost (3/7)
+15/09/25 19:17:47 INFO HadoopRDD: Input split: file:/home/pavana/spark-1.3.1-bin-hadoop2.4/Input.txt:201326592+33710351
+15/09/25 19:17:47 INFO Executor: Finished task 1.0 in stage 0.0 (TID 1). 2009 bytes result sent to driver
+15/09/25 19:17:47 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 11476 ms on localhost (4/7)
+15/09/25 19:17:47 INFO ExternalSorter: Thread 76 spilling in-memory map of 43.3 MB to disk (1 time so far)
+15/09/25 19:17:47 INFO ExternalSorter: Thread 78 spilling in-memory map of 41.5 MB to disk (1 time so far)
+15/09/25 19:17:47 INFO ExternalSorter: Thread 79 spilling in-memory map of 20.9 MB to disk (1 time so far)
+15/09/25 19:17:48 INFO ExternalSorter: Thread 76 spilling in-memory map of 31.2 MB to disk (2 times so far)
+15/09/25 19:17:50 INFO Executor: Finished task 6.0 in stage 0.0 (TID 6). 2009 bytes result sent to driver
+15/09/25 19:17:50 INFO TaskSetManager: Finished task 6.0 in stage 0.0 (TID 6) in 2771 ms on localhost (5/7)
+15/09/25 19:17:50 INFO Executor: Finished task 4.0 in stage 0.0 (TID 4). 2009 bytes result sent to driver
+15/09/25 19:17:50 INFO TaskSetManager: Finished task 4.0 in stage 0.0 (TID 4) in 3022 ms on localhost (6/7)
+15/09/25 19:17:50 INFO Executor: Finished task 5.0 in stage 0.0 (TID 5). 2009 bytes result sent to driver
+15/09/25 19:17:50 INFO TaskSetManager: Finished task 5.0 in stage 0.0 (TID 5) in 3184 ms on localhost (7/7)
+15/09/25 19:17:50 INFO DAGScheduler: Stage 0 (map at <console>:23) finished in 14.333 s
+15/09/25 19:17:50 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+15/09/25 19:17:50 INFO DAGScheduler: looking for newly runnable stages
+15/09/25 19:17:50 INFO DAGScheduler: running: Set()
+15/09/25 19:17:50 INFO DAGScheduler: waiting: Set(Stage 1)
+15/09/25 19:17:50 INFO DAGScheduler: failed: Set()
+15/09/25 19:17:50 INFO DAGScheduler: Missing parents for Stage 1: List()
+15/09/25 19:17:50 INFO DAGScheduler: Submitting Stage 1 (MapPartitionsRDD[5] at saveAsTextFile at <console>:26), which is now runnable
+15/09/25 19:17:50 INFO MemoryStore: ensureFreeSpace(112384) called with curMem=188178, maxMem=278019440
+15/09/25 19:17:50 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 109.8 KB, free 264.9 MB)
+15/09/25 19:17:50 INFO MemoryStore: ensureFreeSpace(67080) called with curMem=300562, maxMem=278019440
+15/09/25 19:17:50 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 65.5 KB, free 264.8 MB)
+15/09/25 19:17:50 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on localhost:47925 (size: 65.5 KB, free: 265.1 MB)
+15/09/25 19:17:50 INFO BlockManagerMaster: Updated info of block broadcast_2_piece0
+15/09/25 19:17:50 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:839
+15/09/25 19:17:50 INFO DAGScheduler: Submitting 7 missing tasks from Stage 1 (MapPartitionsRDD[5] at saveAsTextFile at <console>:26)
+15/09/25 19:17:50 INFO TaskSchedulerImpl: Adding task set 1.0 with 7 tasks
+15/09/25 19:17:50 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 7, localhost, PROCESS_LOCAL, 1056 bytes)
+15/09/25 19:17:50 INFO TaskSetManager: Starting task 1.0 in stage 1.0 (TID 8, localhost, PROCESS_LOCAL, 1056 bytes)
+15/09/25 19:17:50 INFO TaskSetManager: Starting task 2.0 in stage 1.0 (TID 9, localhost, PROCESS_LOCAL, 1056 bytes)
+15/09/25 19:17:50 INFO TaskSetManager: Starting task 3.0 in stage 1.0 (TID 10, localhost, PROCESS_LOCAL, 1056 bytes)
+15/09/25 19:17:50 INFO Executor: Running task 0.0 in stage 1.0 (TID 7)
+15/09/25 19:17:50 INFO Executor: Running task 1.0 in stage 1.0 (TID 8)
+15/09/25 19:17:50 INFO Executor: Running task 2.0 in stage 1.0 (TID 9)
+15/09/25 19:17:50 INFO Executor: Running task 3.0 in stage 1.0 (TID 10)
+15/09/25 19:17:50 INFO ShuffleBlockFetcherIterator: Getting 7 non-empty blocks out of 7 blocks
+15/09/25 19:17:50 INFO ShuffleBlockFetcherIterator: Getting 7 non-empty blocks out of 7 blocks
+15/09/25 19:17:50 INFO ShuffleBlockFetcherIterator: Getting 7 non-empty blocks out of 7 blocks
+15/09/25 19:17:50 INFO ShuffleBlockFetcherIterator: Getting 7 non-empty blocks out of 7 blocks
+15/09/25 19:17:50 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 4 ms
+15/09/25 19:17:50 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 5 ms
+15/09/25 19:17:50 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 9 ms
+15/09/25 19:17:50 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 8 ms
+15/09/25 19:17:52 INFO ExternalAppendOnlyMap: Thread 78 spilling in-memory map of 34.1 MB to disk (1 time so far)
+15/09/25 19:17:52 INFO ExternalAppendOnlyMap: Thread 76 spilling in-memory map of 36.8 MB to disk (1 time so far)
+15/09/25 19:17:52 INFO BlockManager: Removing broadcast 1
+15/09/25 19:17:52 INFO BlockManager: Removing block broadcast_1
+15/09/25 19:17:52 INFO MemoryStore: Block broadcast_1 of size 3736 dropped from memory (free 277655534)
+15/09/25 19:17:52 INFO BlockManager: Removing block broadcast_1_piece0
+15/09/25 19:17:52 INFO MemoryStore: Block broadcast_1_piece0 of size 2632 dropped from memory (free 277658166)
+15/09/25 19:17:52 INFO BlockManagerInfo: Removed broadcast_1_piece0 on localhost:47925 in memory (size: 2.6 KB, free: 265.1 MB)
+15/09/25 19:17:52 INFO BlockManagerMaster: Updated info of block broadcast_1_piece0
+15/09/25 19:17:52 INFO ContextCleaner: Cleaned broadcast 1
+15/09/25 19:17:52 INFO ExternalAppendOnlyMap: Thread 77 spilling in-memory map of 25.2 MB to disk (1 time so far)
+15/09/25 19:17:53 INFO ExternalAppendOnlyMap: Thread 79 spilling in-memory map of 24.6 MB to disk (1 time so far)
+15/09/25 19:17:53 INFO ExternalAppendOnlyMap: Thread 76 spilling in-memory map of 29.5 MB to disk (2 times so far)
+15/09/25 19:17:53 INFO ExternalAppendOnlyMap: Thread 78 spilling in-memory map of 24.7 MB to disk (2 times so far)
+15/09/25 19:17:53 INFO ExternalAppendOnlyMap: Thread 77 spilling in-memory map of 25.1 MB to disk (2 times so far)
+15/09/25 19:17:53 INFO ExternalAppendOnlyMap: Thread 76 spilling in-memory map of 28.0 MB to disk (3 times so far)
+15/09/25 19:17:53 INFO ExternalAppendOnlyMap: Thread 78 spilling in-memory map of 24.7 MB to disk (3 times so far)
+15/09/25 19:18:00 INFO FileOutputCommitter: Saved output of task 'attempt_201509251917_0001_m_000003_10' to file:/home/pavana/spark-1.3.1-bin-hadoop2.4/Output_WordCount/_temporary/0/task_201509251917_0001_m_000003
+15/09/25 19:18:00 INFO SparkHadoopMapRedUtil: attempt_201509251917_0001_m_000003_10: Committed
+15/09/25 19:18:00 INFO Executor: Finished task 3.0 in stage 1.0 (TID 10). 886 bytes result sent to driver
+15/09/25 19:18:00 INFO TaskSetManager: Starting task 4.0 in stage 1.0 (TID 11, localhost, PROCESS_LOCAL, 1056 bytes)
+15/09/25 19:18:00 INFO TaskSetManager: Finished task 3.0 in stage 1.0 (TID 10) in 9932 ms on localhost (1/7)
+15/09/25 19:18:00 INFO Executor: Running task 4.0 in stage 1.0 (TID 11)
+15/09/25 19:18:00 INFO ShuffleBlockFetcherIterator: Getting 7 non-empty blocks out of 7 blocks
+15/09/25 19:18:00 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+15/09/25 19:18:00 INFO FileOutputCommitter: Saved output of task 'attempt_201509251917_0001_m_000001_8' to file:/home/pavana/spark-1.3.1-bin-hadoop2.4/Output_WordCount/_temporary/0/task_201509251917_0001_m_000001
+15/09/25 19:18:00 INFO SparkHadoopMapRedUtil: attempt_201509251917_0001_m_000001_8: Committed
+15/09/25 19:18:00 INFO Executor: Finished task 1.0 in stage 1.0 (TID 8). 886 bytes result sent to driver
+15/09/25 19:18:00 INFO TaskSetManager: Starting task 5.0 in stage 1.0 (TID 12, localhost, PROCESS_LOCAL, 1056 bytes)
+15/09/25 19:18:00 INFO TaskSetManager: Finished task 1.0 in stage 1.0 (TID 8) in 10210 ms on localhost (2/7)
+15/09/25 19:18:00 INFO Executor: Running task 5.0 in stage 1.0 (TID 12)
+15/09/25 19:18:00 INFO FileOutputCommitter: Saved output of task 'attempt_201509251917_0001_m_000000_7' to file:/home/pavana/spark-1.3.1-bin-hadoop2.4/Output_WordCount/_temporary/0/task_201509251917_0001_m_000000
+15/09/25 19:18:00 INFO SparkHadoopMapRedUtil: attempt_201509251917_0001_m_000000_7: Committed
+15/09/25 19:18:00 INFO Executor: Finished task 0.0 in stage 1.0 (TID 7). 886 bytes result sent to driver
+15/09/25 19:18:00 INFO TaskSetManager: Starting task 6.0 in stage 1.0 (TID 13, localhost, PROCESS_LOCAL, 1056 bytes)
+15/09/25 19:18:00 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 7) in 10275 ms on localhost (3/7)
+15/09/25 19:18:00 INFO Executor: Running task 6.0 in stage 1.0 (TID 13)
+15/09/25 19:18:00 INFO ShuffleBlockFetcherIterator: Getting 7 non-empty blocks out of 7 blocks
+15/09/25 19:18:00 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 13 ms
+15/09/25 19:18:00 INFO FileOutputCommitter: Saved output of task 'attempt_201509251917_0001_m_000002_9' to file:/home/pavana/spark-1.3.1-bin-hadoop2.4/Output_WordCount/_temporary/0/task_201509251917_0001_m_000002
+15/09/25 19:18:00 INFO SparkHadoopMapRedUtil: attempt_201509251917_0001_m_000002_9: Committed
+15/09/25 19:18:00 INFO Executor: Finished task 2.0 in stage 1.0 (TID 9). 886 bytes result sent to driver
+15/09/25 19:18:00 INFO TaskSetManager: Finished task 2.0 in stage 1.0 (TID 9) in 10351 ms on localhost (4/7)
+15/09/25 19:18:00 INFO ShuffleBlockFetcherIterator: Getting 7 non-empty blocks out of 7 blocks
+15/09/25 19:18:00 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+15/09/25 19:18:01 INFO ExternalAppendOnlyMap: Thread 76 spilling in-memory map of 31.3 MB to disk (1 time so far)
+15/09/25 19:18:01 INFO ExternalAppendOnlyMap: Thread 78 spilling in-memory map of 31.2 MB to disk (1 time so far)
+15/09/25 19:18:01 INFO ExternalAppendOnlyMap: Thread 92 spilling in-memory map of 61.8 MB to disk (1 time so far)
+15/09/25 19:18:01 INFO ExternalAppendOnlyMap: Thread 78 spilling in-memory map of 34.8 MB to disk (2 times so far)
+15/09/25 19:18:01 INFO ExternalAppendOnlyMap: Thread 76 spilling in-memory map of 36.6 MB to disk (2 times so far)
+15/09/25 19:18:03 INFO FileOutputCommitter: Saved output of task 'attempt_201509251917_0001_m_000004_11' to file:/home/pavana/spark-1.3.1-bin-hadoop2.4/Output_WordCount/_temporary/0/task_201509251917_0001_m_000004
+15/09/25 19:18:03 INFO SparkHadoopMapRedUtil: attempt_201509251917_0001_m_000004_11: Committed
+15/09/25 19:18:03 INFO Executor: Finished task 4.0 in stage 1.0 (TID 11). 886 bytes result sent to driver
+15/09/25 19:18:03 INFO TaskSetManager: Finished task 4.0 in stage 1.0 (TID 11) in 3557 ms on localhost (5/7)
+15/09/25 19:18:04 INFO FileOutputCommitter: Saved output of task 'attempt_201509251917_0001_m_000005_12' to file:/home/pavana/spark-1.3.1-bin-hadoop2.4/Output_WordCount/_temporary/0/task_201509251917_0001_m_000005
+15/09/25 19:18:04 INFO SparkHadoopMapRedUtil: attempt_201509251917_0001_m_000005_12: Committed
+15/09/25 19:18:04 INFO Executor: Finished task 5.0 in stage 1.0 (TID 12). 886 bytes result sent to driver
+15/09/25 19:18:04 INFO TaskSetManager: Finished task 5.0 in stage 1.0 (TID 12) in 3450 ms on localhost (6/7)
+15/09/25 19:18:04 INFO FileOutputCommitter: Saved output of task 'attempt_201509251917_0001_m_000006_13' to file:/home/pavana/spark-1.3.1-bin-hadoop2.4/Output_WordCount/_temporary/0/task_201509251917_0001_m_000006
+15/09/25 19:18:04 INFO SparkHadoopMapRedUtil: attempt_201509251917_0001_m_000006_13: Committed
+15/09/25 19:18:04 INFO Executor: Finished task 6.0 in stage 1.0 (TID 13). 886 bytes result sent to driver
+15/09/25 19:18:04 INFO TaskSetManager: Finished task 6.0 in stage 1.0 (TID 13) in 3507 ms on localhost (7/7)
+15/09/25 19:18:04 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+15/09/25 19:18:04 INFO DAGScheduler: Stage 1 (saveAsTextFile at <console>:26) finished in 13.781 s
+15/09/25 19:18:04 INFO DAGScheduler: Job 0 finished: saveAsTextFile at <console>:26, took 28.348555 s
